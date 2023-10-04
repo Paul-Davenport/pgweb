@@ -1,3 +1,16 @@
+:root {
+  --verydark: hsl(0, 0%, 12%);
+  --dark: hsl(0, 0%, 16%);
+  --lightdark: hsl(0, 0%,25%);
+  --light: hsl(0, 0%, 80%);
+  --verylight: hsl(0, 0%, 90%);
+  --accent: hsl(216, 58%, 31%);
+
+  --normalfont: 13px;
+  --largefont: 15px;
+  --largestfont: 17px;
+}
+
 #main {
   display: none;
 }
@@ -8,7 +21,7 @@
   left: 250px;
   right: 0;
   height: 50px;
-  background: #79589f;
+  background: var(--accent);
 }
 
 #nav ul {
@@ -24,9 +37,9 @@
   float: left;
   height: 49px;
   line-height: 49px;
-  font-size: 13px;
+  font-size: var(--normalfont);
   padding: 0px 14px;
-  color: #d6cce2;
+  color: var(--light);
   font-weight: 500;
   margin: 0 1px;
   cursor: pointer;
@@ -40,13 +53,13 @@
 }
 
 #nav ul li:hover {
-  color: #fff;
+  background-color: var(--lightdark);
 }
 
 #nav ul li.selected {
   position: relative;
-  background: #fff;
-  color: #000;
+  background:var(--lightdark);
+  color: var(--verylight);
   margin: 0;
 }
 
@@ -57,7 +70,7 @@
   left: 0; right: 0;
   height: 1px;
   widows: 100%;
-  background: #fff;
+  background: var(--light);
 }
 
 #nav ul li.selected:first-child {
@@ -71,7 +84,8 @@
   top: 0px;
   bottom: 0px;
   box-sizing: border-box;
-  background: #f9f9f9;
+  background: var(--dark);
+  color: var(--light);
 }
 
 #sidebar .current-database {
@@ -82,9 +96,9 @@
   height: 50px;
   line-height: 50px;
   font-weight: bold;
-  font-size: 14px;
-  color: #fff;
-  background: #79589f;
+  font-size: var(--largefont);
+  color: var(--light);
+  background: var(--accent);
   z-index: 900;
 }
 
@@ -122,10 +136,10 @@
 
 #sidebar .current-database input.typeahead {
   display: none;
-  background: #79589f;
+  background: var(--accent);
   width: 200px;
   height: 22px;
-  color: #fff;
+  color: var(--light);
   font-weight: normal;
   outline: none;
   border: 0px none;
@@ -136,7 +150,7 @@
   top: 0px;
   right: 6px;
   cursor: pointer;
-  color: #fff;
+  color: var(--light);
   display: none;
 }
 
@@ -145,7 +159,7 @@
 }
 
 #sidebar .current-database input.typeahead::-webkit-input-placeholder {
-  color: #fff;
+  color: var(--light);
 }
 
 #sidebar ul.typeahead {
@@ -176,34 +190,35 @@
   height: 30px;
   padding: 4px;
   box-sizing: border-box;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--light);
 }
 
 #sidebar .objects-search i.fa-search {
   position: absolute;
   left: 8px;
   top: 7px;
-  color: #a1a1a1;
+  color: var(--light);
 }
 
 #sidebar .objects-search i.fa-times-circle {
   position: absolute;
   right: 8px;
   top: 7px;
-  color: #a1a1a1;
+  color: var(--light);
   display: none;
   cursor: pointer;
 }
 
 #sidebar .objects-search i.fa-times-circle:hover {
-  color: #888;
+  color: var(--light);
+  ;
 }
 
 #sidebar .objects-search input[type="text"] {
   background: transparent;
   border: 0px none;
-  font-size: 12px;
-  color: #000;
+  font-size: var(--normalfont);
+  color: var(--light);
   height: 22px;
   line-height: 22px;
   padding: 0px;
@@ -228,7 +243,7 @@
 
 
 #sidebar div.tables-list #tables, #sequences, #objects {
-  font-size: 12px;
+  font-size: var(--normalfont);
 }
 
 #sidebar div.table-information {
@@ -247,12 +262,12 @@
 }
 
 #sidebar div.table-information .title {
-  font-size: 12px;
+  font-size: var(--normalfont);
   text-transform: uppercase;
-  color: #aaa;
+  color: var(--light);
   line-height: 30px;
   padding: 0px 8px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--dark);
 }
 
 #sidebar div.table-information .lines {
@@ -263,12 +278,12 @@
   line-height: 24px;
   height: 24px;
   padding: 0 8px 0 8px;
-  font-size: 12px;
-  color: #7F7E7F !important;
+  font-size: var(--normalfont);
+  color: var(--light) !important;
 }
 
 #sidebar div.table-information .lines .line span {
-  color: #4F4F4F;
+  color: var(--light);
   min-width: 0;
   padding-left: 0px;
 }
@@ -286,6 +301,8 @@
   width: 100%;
   height: 300px;
   position: relative;
+  background-color: var(--verydark);
+  color: var(--light);
 }
 
 #input .input-wrapper {
@@ -296,7 +313,7 @@
 #input_resize_handler {
   width: 100%;
   height: 1px;
-  background: #ddd;
+  background:var(--dark);
   cursor: row-resize;
   position: absolute;
   bottom: 0px;
@@ -307,20 +324,21 @@
 }
 
 #input .actions {
-  background: #fff;
+  background: var(--verydark);
   padding: 10px;
   height: 50px;
   bottom: 0px;
 }
 
 #input .actions #result-rows-count {
-  font-size: 12px;
+  font-size: var(--normalfont);
   display: inline-block;
   height: 30px;
   line-height: 30px;
   float: left;
   margin-right: 10px;
-  color: #999;
+  color: var(--light);
+  border-color: var(--light);
 }
 
 #input .actions .btn {
@@ -328,39 +346,39 @@
   height: 30px;
   padding: 0px 13px;
   margin: 0px;
-  font-size: 13px;
-  color: #555;
+  font-size: var(--normalfont);
+  color: var(--light);
   border: none;
   box-shadow: none;
   background: transparent;
-  border: 1px solid #999;
+  border: 1px solid var(--light);
   float: left;
   margin-right: 10px;
 }
 
 #input .actions .btn-primary {
-  border-color: #7eb54e;
-  color: #7eb54e;
+  border-color: var(--light);
+  color: var(--light);
 }
 
 #input .actions .btn:hover {
-  background: transparent !important;
-  border-color: #444;
-  color: #000;
+  background: var(--light) !important;
+  border-color: var(--dark);
+  color: var(--verydark);
 }
 
 #input .actions .btn-primary:hover {
-  color: #64903e;
-  border-color: #64903e;
+  color: var(--accent);
+  background-color: var(--accent);
 }
 
 #input .actions #query_progress {
   display: none;
   float: left;
-  font-size: 12px;
+  font-size: var(--normalfont);
   line-height: 30px;
   height: 30px;
-  color: #aaa;
+  color: var(--light);
 }
 
 #input .actions .btn:focus {
@@ -369,11 +387,11 @@
 }
 
 #input .actions .btn:hover {
-  background: #7eb154;
+  background: var(--accent);
 }
 
 #input .actions .btn-default:hover {
-  background: #bbb;
+  background: var(--light);
 }
 
 #input .actions .btn:last-child {
@@ -389,6 +407,8 @@
   margin: 0px;
   padding: 0px;
   overflow: auto;
+  background-color: var(--verydark);
+  color: var(--light);
 }
 
 #pagination {
@@ -399,9 +419,9 @@
   padding: 10px;
   top: 0px;
   left: 0px;
-  background: #fff;
-  border-bottom: 1px solid #eee;
-  box-shadow: 0 1px 3px 0px #f1f1f1;
+  background: var(--dark);
+  border-bottom: 1px solid var(--verydark);
+  box-shadow: 0 1px 3px 0px var(--verydark);
 }
 
 #pagination .pager-container {
@@ -410,7 +430,7 @@
 
 #pagination .filters {
   float: left;
-  font-size: 12px;
+  font-size: var(--normalfont);
 }
 
 #pagination .filters span {
@@ -420,11 +440,11 @@
   line-height: 32px;
   height: 32px;
   margin: 0px 8px;
-  color: #999;
+  color: var(--light);
 }
 
 #pagination .filters select {
-  font-size: 12px;
+  font-size: var(--normalfont);
   width: 100px;
   float: left;
   line-height: 30px;
@@ -447,13 +467,13 @@
   height: 30px;
   line-height: 30px;
   margin-right: 8px;
-  font-size: 12px;
+  font-size: var(--normalfont);
 }
 
 #pagination .filters .btn-primary {
   border-color: #7eb54e;
   color: #7eb54e;
-  background: #fff;
+  background: var(--dark);
   outline: none;
   float: left;
   margin-right: 8px;
@@ -470,15 +490,15 @@
 
 #pagination .current-page {
   float: right;
-  font-size: 12px;
+  font-size: var(--normalfont);
   margin-right: 12px;
-  color: #999;
+  color: var(--light);
   line-height: 32px;
   height: 32px;
 }
 
 #results {
-  font-size: 12px;
+  font-size: var(--normalfont);
   margin: 0px;
   padding: 0px;
 }
@@ -489,20 +509,20 @@
 
 #results tr:nth-child(even) > td {
   border: none;
-  background: #ffffff;
+  background: var(--verydark);
 }
 
 #results tr:nth-child(odd) > td {
   border: none;
-  background: #f9f9f9;
+  background: var(--verydark);
 }
 
 #results th {
   border-top: none;
-  border-bottom: 1px solid #eae9e9;
+  border-bottom: 1px solid var(--light);
   padding: 3px 9px;
   line-height: 24px;
-  color: #333;
+  color: var(--light);
   font-weight: bold;
   cursor: pointer;
 
@@ -514,33 +534,32 @@
 }
 
 #results th:hover {
-  background: #f8f8f8;
+  background: var(--dark);
 }
 
 #results th.active {
-  background: #f3faff;
+  background: var(--lightdark);
 }
 
 #results[data-mode="browse"] th:hover {
   cursor: pointer;
-  background: #fafafa;
-}
+  background: var(--dark)}
 
 #results tbody tr:hover td {
-  background: #ffe;
+  background: var(--dark);
 }
 
 #results tbody tr {
-  border-bottom: 1px solid #f2f2f2;
+  border-bottom: 1px solid var(--dark);
 }
 
 #results tr.selected td {
-  background: #3874d7 !important;
+  background: var(--accent) !important;
   color: #fff !important;
 }
 
 #results td {
-  color: #3a3633;
+  color: var(--light);
   vertical-align: middle;
   border: 0px none;
 }
@@ -554,13 +573,13 @@
 }
 
 #results td div span.null {
-  color: #bbb;
+  color: var(--light);
   text-transform: uppercase;
 }
 
 #results td textarea {
-  color: #000 !important;
-  font-size: 12px;
+  color: var(--light) !important;
+  font-size: var(--normalfont);
 }
 
 #results th:first-child,
@@ -575,7 +594,7 @@
 #results_view {
   display: none;
   padding: 12px;
-  font-size: 14px;
+  font-size: var(--largefont);
 }
 
 #results_view .title {
@@ -596,14 +615,14 @@
   top: 4px;
   width: 30px;
   height: 30px;
-  background: #fff;
-  border: 1px solid #ddd;
+  background: var(--light);
+  border: 1px solid var(--light);
   border-radius: 3px;
   cursor: pointer;
 }
 
 #results_view .copy:hover {
-  border-color: #999;
+  border-color: var(--light);
 }
 
 #results_view pre:hover .copy {
@@ -633,9 +652,9 @@
   position: fixed;
   top: 20%;
   left: 20%;
-  background: #fff;
-  border: 1px solid #ccc;
-  box-shadow: #ddd 0 0 20px;
+  background: var(--light);
+  border: 1px solid var(--light);
+  box-shadow: var(--light) 0 0 20px;
 }
 
 #content_modal .content {
@@ -643,7 +662,7 @@
   position: relative;
   padding: 8px;
   white-space: break-spaces;
-  background: #fff;
+  background: var(--verylight);
   overflow-y: scroll;
   height: 366px;
   box-sizing: border-box;
@@ -652,7 +671,7 @@
 #content_modal .title {
   font-weight: bold;
   line-height: 24px;
-  background: #f5f5f5;
+  background: var(--light);
   padding: 4px 4px 4px 8px;
 }
 
@@ -665,7 +684,7 @@
   width: 24px;
   height: 24px;
   line-height: 24px;
-  font-size: 13px;
+  font-size: var(--largefont);
   text-align: center;
   background: #fff;
   border: 1px solid #ddd;
@@ -701,7 +720,7 @@
 #connection_window {
   z-index: 3;
   position: fixed;
-  background: #fff;
+  background: var(--verydark);
   top: 0px;
   left: 0px;
   bottom: 0px;
@@ -718,9 +737,9 @@
 }
 
 #edit_connection, #close_connection {
-  background: #79589f;
-  color: #fff;
-  border-color: #fff;
+  background: var(--dark);
+  color: var(--light);
+  border-color: var(--light);
 }
 
 #edit_connection i {
@@ -751,20 +770,20 @@
 
 .connection-settings .header h1 {
   text-align: center;
-  text-shadow: 0px 1px 0px #fff;
+  text-shadow: 0px 1px 0px var(--verylight);
   color: #999;
   font-weight: normal;
 }
 
 .connection-settings .header .version {
-  font-size: 12px;
-  color: #aaa;
+  font-size: var(--normalfont);
+  color: var(--light);
   text-align: center;
   display: block;
 }
 
 .connection-settings .header .update {
-  font-size: 12px;
+  font-size: var(--normalfont);
   text-align: center;
   padding: 4px;
   margin: 12px 0px;
@@ -772,7 +791,7 @@
 }
 
 .connection-settings form {
-  background: #f6f6f6;
+  background: var(--light);
   padding: 25px;
   border-radius: 4px;
   -moz-border-radius: 4px;
@@ -780,7 +799,7 @@
 }
 
 .connection-settings form p.help-block {
-  font-size: 12px;
+  font-size: var(--normalfont);
 }
 
 .connection-settings form .no-left-padding {
@@ -797,9 +816,9 @@
 }
 
 .connection-ssh-group h3 {
-  font-size: 18px;
+  font-size: var(--largestfont);
   margin: 0px 0px 20px 0px;
-  color: #aaa;
+  color: var(--light);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -815,7 +834,7 @@
 
 .schema .schema-name {
   font-weight: bold;
-  font-size: 13px;
+  font-size: var(--largefont);
   display: block;
   line-height: 30px;
   height: 30px;
@@ -846,7 +865,7 @@
 }
 
 .schema .schema-container .schema-group .schema-group-count {
-  color: #999;
+  color: var(--light);
   display: inline-block;
   float: right;
   margin-right: 8px;
@@ -872,17 +891,17 @@
 }
 
 .schema .schema-container .schema-group ul li i {
-  color: #999;
+  color: var(--light);
 }
 
 .schema .schema-container .schema-group ul li.active {
-  background: #f1f1f1;
-  color: #333;
+  background: var(--lightdark);
+  color: var(--light);
   font-weight: bold;
 }
 
 .schema .schema-container .schema-group ul li:hover {
-  background: #f1f1f1;
+  background: var(--lightdark);
 }
 
 .schema .schema-container .schema-group.expanded .fa-chevron-down {
@@ -899,18 +918,69 @@
 
 /* -------------------------------------------------------------------------- */
 /* Ace Customizations */
+/* There is a ace theme setting in app.js but overrode it */
 /* -------------------------------------------------------------------------- */
 
+.ace_editor, .ace_editor *{
+  font-family: "Monaco", "Menlo", "Ubuntu Mono", "Droid Sans Mono", "Consolas", monospace !important;
+  font-size: var(--largefont) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+}
+
+.ace_content {
+  background-color: var(--verydark);
+  color: var(--light);
+  font-size: var(--largefont)
+}
+
 .ace_gutter, .ace_gutter-cell {
-  background: #fff !important;
-  color: #bbb;
-  font-size: 12px;
+  background: var(--verydark) !important;
+  color: var(--light);
+  font-size: var(--largefont)
 }
 
 .ace_content .ace_active-line {
-  background: none !important;
+  background: var(--dark) !important;
 }
 
 .ace_autocomplete .ace_active-line {
-  background: #eee !important;
+  background: var(--lightdark) !important;
+}
+
+/* Select */
+.ace-tomorrow .ace_keyword {
+  color: hsl(281, 40%, 59%);
+}
+
+/* star */
+.ace-tomorrow .ace_keyword.ace_operator {
+  color: hsl(118, 63%, 59%);
+}
+
+/* highlight executed statement */
+.ace-tomorrow .ace_marker-layer .ace_active-line {
+  background: var(--dark)
+}
+
+/* autocomplete selected highlight */
+.ace_editor.ace_autocomplete .ace_completion-highlight {
+  color:  hsl(118, 63%, 59%);;
+}
+
+.ace-tomorrow .ace_entity.ace_name.ace_function, .ace-tomorrow .ace_support.ace_function, .ace-tomorrow .ace_variable {
+  color: hsl(214, 93%, 73%);
+}
+
+.ace-tomorrow .ace_marker-layer .ace_selection {
+  background: var(--lightdark);
+}
+
+/* Autocomplete box border */
+.ace_editor.ace_autocomplete {
+  border: 1px var(--lightdark) solid;
+}
+
+.ace_scrollbar {
+  background-color: var(--dark);
 }

@@ -23,6 +23,9 @@ var (
 	//go:embed sql/table_indexes.sql
 	TableIndexes string
 
+	//go:embed sql/table_indexes_cockroach.sql
+	TableIndexesCockroach string
+
 	//go:embed sql/table_constraints.sql
 	TableConstraints string
 

@@ -1,3 +1,8 @@
+## Forked Changes
+- Changed css to be dark mode only based on vscode theme
+- Added CockroachDB table index query to fix pg_size_pretty issue when viewing table index.  Default size to NULL as CockroachDB uses ranges instead
+
+
 # pgweb
 
 Simple web-based and cross platform PostgreSQL database explorer.

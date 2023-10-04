@@ -318,13 +318,23 @@ func (client *Client) TableInfo(table string) (*Result, error) {
 
 func (client *Client) TableIndexes(table string) (*Result, error) {
 	schema, table := getSchemaAndTable(table)
-	res, err := client.query(statements.TableIndexes, schema, table)
 
-	if err != nil {
-		return nil, err
+	if client.serverType == cockroachType {
+		res, err := client.query(statements.TableIndexesCockroach, schema, table)
+		if err != nil {
+			return nil, err
+		}
+		return res, err
+
+	} else {
+		res, err := client.query(statements.TableIndexes, schema, table)
+		if err != nil {
+			return nil, err
+		}
+		return res, err
+
 	}
 
-	return res, err
 }
 
 func (client *Client) TableConstraints(table string) (*Result, error) {
