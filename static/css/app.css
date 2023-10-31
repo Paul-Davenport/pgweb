@@ -401,7 +401,7 @@
 #output {
   position: absolute;
   left: 0px;
-  top: 300px;
+  top: 330px;
   bottom: 0px;
   right: 0px;
   margin: 0px;
@@ -983,4 +983,12 @@
 
 .ace_scrollbar {
   background-color: var(--dark);
+}
+
+
+
+/* tabs*/
+
+.nav-tabs>li>a {
+  line-height: 10px;
 }

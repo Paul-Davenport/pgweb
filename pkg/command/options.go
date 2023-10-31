@@ -38,7 +38,7 @@ type Options struct {
 	SSLKey                       string `long:"ssl-key" description:"SSL client certificate key file"`
 	OpenTimeout                  int    `long:"open-timeout" description:" Maximum wait for connection, in seconds" default:"30"`
 	HTTPHost                     string `long:"bind" description:"HTTP server host" default:"localhost"`
-	HTTPPort                     uint   `long:"listen" description:"HTTP server listen port" default:"8081"`
+	HTTPPort                     uint   `long:"listen" description:"HTTP server listen port" default:"8888"`   
 	AuthUser                     string `long:"auth-user" description:"HTTP basic auth user"`
 	AuthPass                     string `long:"auth-pass" description:"HTTP basic auth password"`
 	SkipOpen                     bool   `short:"s" long:"skip-open" description:"Skip browser open on start"`

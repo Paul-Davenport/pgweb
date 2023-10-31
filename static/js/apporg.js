@@ -8,7 +8,6 @@ var currentObject       = null;
 var autocompleteObjects = [];
 var inputResizing       = false;
 var inputResizeOffset   = null;
-var queryTabCounter = 1;
 
 var filterOptions = {
   "equal":      "= 'DATA'",
@@ -1849,39 +1848,5 @@ $(document).ready(function() {
       }
     });
   });
-
-
-  $('#lnkAddQueryTab').on('click', function(e){
-    queryTabCounter++;
-
-    //Create query tab
-    generateFromTemplate({tab_id: queryTabCounter}, 'tmpl-query-tab', $('#input .tab-content'), false);
-
-    //Create tab button
-    var tabBtnHTML = getFromTemplate({tab_id: queryTabCounter}, 'tmpl-query-tab-btn');
-
-    //Insert before this button
-    $(this).parent().before(tabBtnHTML);
-
-    e.preventDefault();
-  });
-
 });
 
-function getFromTemplate(objData, templateId) {
-  var source = $("#" + templateId).html();
-  var template = Handlebars.compile(source);
-  var html = template(objData);
-
-  return html;
-}
-
-function generateFromTemplate(objData, templateId, $destContainer, iReplace) {
-  var html = getFromTemplate(objData, templateId);
-
-  if (iReplace) {
-    $destContainer.html(html);
-  } else {
-    $destContainer.append(html);
-  }
-}
