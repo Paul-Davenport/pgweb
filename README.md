@@ -1,6 +1,13 @@
+## Verion Changes
+- Upgraded to 14.2 on 11/15/2023
+
+
 ## Forked Changes
 - Changed css to be dark mode only based on vscode theme
 - Added CockroachDB table index query to fix pg_size_pretty issue when viewing table index.  Default size to NULL as CockroachDB uses ranges instead
+- Made results table have a sticky header so column names always show when scrolling
+- Made the screen resizer more visible and bigger
+
 
 
 # pgweb
