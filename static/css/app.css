@@ -986,9 +986,9 @@
 }
 
   
-  /* Results header sticky top */
-  thead#results_header {
-    position: sticky;
-    top: 0;
-    background-color: var(--dark);
-  }
+/* Results header sticky top */
+thead#results_header {
+  position: sticky;
+  top: 0;
+  background-color: var(--dark);
+}
